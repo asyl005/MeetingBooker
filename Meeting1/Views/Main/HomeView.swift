@@ -1,0 +1,45 @@
+import SwiftUI
+
+struct HomeView: View {
+    @EnvironmentObject var authVM: AuthViewModel
+    
+    let primaryColor = Color(red: 0.2, green: 0.6, blue: 0.9, opacity: 1.0)
+    
+    var body: some View {
+        VStack(spacing: 12) {
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(authVM.currentUser?.fullName ?? "")
+                        .font(.title2).bold()
+                        .foregroundColor(.primary)
+                    
+                    // UserRole.rawValue арқылы қазақша атауды аламыз
+                    Text("Рөл: \(authVM.currentUser?.role.rawValue ?? "Белгісіз")")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                }
+                Spacer()
+                
+                // MARK: - Шығу Батырмасы
+                Button("Шығу") {
+                    authVM.logout()
+                }
+                .buttonStyle(.bordered)
+                .tint(.red)
+            }
+            .padding(.horizontal)
+            .padding(.top, 10)
+            
+            // Контент: Рөлге байланысты View-ді көрсету
+            if authVM.currentUser?.role == .parent {
+                ParentMeetingsView()
+            } else {
+                TeacherMeetingsView()
+            }
+            
+            Spacer()
+        }
+        .navigationTitle("Басқару Тақтасы")
+        .padding(.horizontal, 0) // Ішкі View-лерде padding болады
+    }
+}

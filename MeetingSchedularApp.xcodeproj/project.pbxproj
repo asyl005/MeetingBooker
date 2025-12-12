@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		9EBBE9932EEA7628002F1A5F /* Meeting1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meeting1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EBBE9932EEA7628002F1A5F /* MeetingSchedularApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeetingSchedularApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -40,7 +40,7 @@
 		9EBBE9942EEA7628002F1A5F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9EBBE9932EEA7628002F1A5F /* Meeting1.app */,
+				9EBBE9932EEA7628002F1A5F /* MeetingSchedularApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,9 +48,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9EBBE9922EEA7628002F1A5F /* Meeting1 */ = {
+		9EBBE9922EEA7628002F1A5F /* MeetingSchedularApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9EBBE99E2EEA7629002F1A5F /* Build configuration list for PBXNativeTarget "Meeting1" */;
+			buildConfigurationList = 9EBBE99E2EEA7629002F1A5F /* Build configuration list for PBXNativeTarget "MeetingSchedularApp" */;
 			buildPhases = (
 				9EBBE98F2EEA7628002F1A5F /* Sources */,
 				9EBBE9902EEA7628002F1A5F /* Frameworks */,
@@ -63,11 +63,11 @@
 			fileSystemSynchronizedGroups = (
 				9EBBE9952EEA7628002F1A5F /* Meeting1 */,
 			);
-			name = Meeting1;
+			name = MeetingSchedularApp;
 			packageProductDependencies = (
 			);
 			productName = Meeting1;
-			productReference = 9EBBE9932EEA7628002F1A5F /* Meeting1.app */;
+			productReference = 9EBBE9932EEA7628002F1A5F /* MeetingSchedularApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -85,7 +85,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9EBBE98E2EEA7627002F1A5F /* Build configuration list for PBXProject "Meeting1" */;
+			buildConfigurationList = 9EBBE98E2EEA7627002F1A5F /* Build configuration list for PBXProject "MeetingSchedularApp" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -99,7 +99,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9EBBE9922EEA7628002F1A5F /* Meeting1 */,
+				9EBBE9922EEA7628002F1A5F /* MeetingSchedularApp */,
 			);
 		};
 /* End PBXProject section */
@@ -309,7 +309,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9EBBE98E2EEA7627002F1A5F /* Build configuration list for PBXProject "Meeting1" */ = {
+		9EBBE98E2EEA7627002F1A5F /* Build configuration list for PBXProject "MeetingSchedularApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9EBBE99C2EEA7629002F1A5F /* Debug */,
@@ -318,7 +318,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9EBBE99E2EEA7629002F1A5F /* Build configuration list for PBXNativeTarget "Meeting1" */ = {
+		9EBBE99E2EEA7629002F1A5F /* Build configuration list for PBXNativeTarget "MeetingSchedularApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9EBBE99F2EEA7629002F1A5F /* Debug */,
