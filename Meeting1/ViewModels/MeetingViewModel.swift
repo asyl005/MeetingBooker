@@ -14,15 +14,13 @@ final class MeetingViewModel: ObservableObject {
         loadDemoTeachersIfNeeded()
     }
     
-    // 'Incorrect argument label' қатесін жою үшін:
     func createMeeting(teacher: String, parent: String, student: String, date: Date, notes: String?) {
-        // Meeting init-тегі жаңа init-ті қолданамыз.
+        
         let m = Meeting(teacherName: teacher, parentName: parent, studentName: student, date: date, notes: notes, status: .pending)
         meetings.append(m)
         saveMeetings()
     }
     
-    // ... (Қалған функциялар өзгеріссіз)
     func updateMeeting(_ meeting: Meeting) {
         if let idx = meetings.firstIndex(where: { $0.id == meeting.id }) {
             meetings[idx] = meeting

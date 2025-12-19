@@ -10,7 +10,6 @@ struct CreateMeetingView: View {
     @State private var date = Date().addingTimeInterval(60*60)
     @State private var notes = ""
     
-    // Таңдалған мұғалімнің бос уақыттарын алу
     var selectedTeacherSlots: [String] {
         meetingVM.getAvailableSlots(for: teacherName)
     }

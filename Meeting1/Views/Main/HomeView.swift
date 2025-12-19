@@ -20,7 +20,6 @@ struct HomeView: View {
                 }
                 Spacer()
                 
-                // MARK: - Шығу Батырмасы
                 Button("Шығу") {
                     authVM.logout()
                 }
@@ -30,7 +29,6 @@ struct HomeView: View {
             .padding(.horizontal)
             .padding(.top, 10)
             
-            // Контент: Рөлге байланысты View-ді көрсету
             if authVM.currentUser?.role == .parent {
                 ParentMeetingsView()
             } else {
@@ -39,7 +37,7 @@ struct HomeView: View {
             
             Spacer()
         }
-        .navigationTitle("Басқару Тақтасы")
-        .padding(.horizontal, 0) // Ішкі View-лерде padding болады
+        .navigationTitle("Басты бет")
+        .padding(.horizontal, 0) 
     }
 }

@@ -1,12 +1,10 @@
 import Foundation
 
-// Хабарлама жіберушінің рөлі
 enum MessageRole: String, Codable {
     case parent = "Ата-ана"
     case teacher = "Мұғалім"
 }
 
-// Бір хабарламаның моделі
 struct Message: Identifiable, Codable {
     let id: UUID
     let senderRole: MessageRole
@@ -21,7 +19,6 @@ struct Message: Identifiable, Codable {
     }
 }
 
-// Белгілі бір жиналысқа қатысты чат
 struct Chat: Identifiable, Codable {
     let id: UUID // Meeting ID-мен бірдей
     var messages: [Message] = []

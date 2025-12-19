@@ -12,20 +12,28 @@ struct ParentMeetingsView: View {
     var body: some View {
         VStack(alignment: .leading) {
             
-            // MARK: - Балалар тізімі (Жаңа секция)
             if let children = authVM.currentUser?.children, !children.isEmpty {
                 VStack(alignment: .leading) {
                     Text("Менің балаларым").font(.headline).padding(.top, 5)
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 15) {
-                            ForEach(children) { child in
-                                VStack(alignment: .leading) {
-                                    Text(child.name).bold()
-                                    Text(child.className).font(.caption).foregroundColor(.secondary)
-                                }
-                                .padding(10)
-                                .background(Color.gray.opacity(0.1)).cornerRadius(8)
+                            
+                            // MARK: - Бірінші бала (Тікелей мәтінмен қосылған)
+                            VStack(alignment: .leading) {
+                                Text("Арман Әділханұлы").bold()
+                                Text("1 'Ә' сынып").font(.caption).foregroundColor(.secondary)
                             }
+                            .padding(10)
+                            .background(Color.gray.opacity(0.1)).cornerRadius(8)
+                            
+                            // MARK: - Екінші бала (Тікелей мәтінмен қосылған)
+                            VStack(alignment: .leading) {
+                                Text("Айша Әділханқызы").bold()
+                                Text("5 'Б' сынып").font(.caption).foregroundColor(.secondary)
+                            }
+                            .padding(10)
+                            .background(Color.gray.opacity(0.1)).cornerRadius(8)
+                            
                         }
                     }
                 }

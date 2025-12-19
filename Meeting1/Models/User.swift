@@ -1,6 +1,5 @@
 import Foundation
 
-// Child (Бала) моделі
 struct Child: Identifiable, Codable {
     let id: UUID
     var name: String
@@ -13,7 +12,6 @@ struct Child: Identifiable, Codable {
     }
 }
 
-// UserRole (Қолданушы рөлі)
 enum UserRole: String, Codable {
     case parent = "Ата-ана"
     case teacher = "Мұғалім"
@@ -27,7 +25,6 @@ struct User: Identifiable, Codable {
     var role: UserRole
     var children: [Child] = []
     
-    // Init-ті толықтыру
     init(id: UUID = UUID(), fullName: String, email: String, password: String, role: UserRole, children: [Child] = []) {
         self.id = id
         self.fullName = fullName

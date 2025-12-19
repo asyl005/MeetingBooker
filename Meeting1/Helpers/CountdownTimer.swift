@@ -11,7 +11,6 @@ final class CountdownTimer: ObservableObject {
         targetDate = date
         timer?.invalidate()
         updateOnce()
-        // scheduled on main runloop
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
             DispatchQueue.main.async {
                 self?.updateOnce()

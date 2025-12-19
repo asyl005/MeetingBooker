@@ -31,7 +31,6 @@ final class AuthViewModel: ObservableObject {
         }
     }
     
-    // Шақырудағы қателерді жою үшін:
     func register(fullName: String, email: String, password: String, role: UserRole) -> Bool {
         guard !fullName.isEmpty, !email.isEmpty, !password.isEmpty else { return false }
         guard users.first(where: { $0.email.lowercased() == email.lowercased() }) == nil else { return false }
@@ -46,7 +45,6 @@ final class AuthViewModel: ObservableObject {
         users.append(user)
         saveUsers()
         
-        // 'Result of call... is unused' қатесін жою үшін:
         _ = login(email: email, password: password)
         return true
     }
@@ -60,7 +58,6 @@ final class AuthViewModel: ObservableObject {
         return false
     }
     
-    // ... (logout және Storage функциялары өзгеріссіз)
     func logout() {
         currentUser = nil
         Database.shared.save(nil as User?, key: currentUserKey)

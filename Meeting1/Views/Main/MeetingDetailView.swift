@@ -5,7 +5,6 @@ struct MeetingDetailView: View {
     @EnvironmentObject var authVM: AuthViewModel
     @Environment(\.dismiss) var dismiss
     
-    // @State ретінде алу, себебі статус View ішінде өзгереді
     @State var meeting: Meeting
     @StateObject private var timer = CountdownTimer()
     
@@ -60,10 +59,10 @@ struct MeetingDetailView: View {
             // MARK: - Мұғалімге арналған Әрекеттер
             if isTeacher && meeting.status == .pending {
                 HStack(spacing: 15) {
-                    Button("❌ Бас тарту") { updateStatus(newStatus: .declined) }
+                    Button("Бас тарту") { updateStatus(newStatus: .declined) }
                         .buttonStyle(.borderedProminent).tint(.red)
                     
-                    Button("✅ Қабылдау") { updateStatus(newStatus: .accepted) }
+                    Button("Қабылдау") { updateStatus(newStatus: .accepted) }
                         .buttonStyle(.borderedProminent).tint(.green)
                 }
                 .padding(.bottom)
@@ -84,7 +83,6 @@ struct MeetingDetailView: View {
     }
 }
 
-// MeetingDetailView-дегі қатені (Missing Type) жою үшін:
 struct MeetingStatusBanner: View {
     let status: MeetingStatus
     let primaryColor: Color

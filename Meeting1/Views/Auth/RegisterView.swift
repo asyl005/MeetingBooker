@@ -23,7 +23,7 @@ struct RegisterView: View {
                 
                 Section("Рөлді таңдау") {
                     Picker("Рөл", selection: $role) {
-                        // UserRole моделінен қазақша атауларды аламыз
+                        
                         Text(UserRole.parent.rawValue).tag(UserRole.parent)
                         Text(UserRole.teacher.rawValue).tag(UserRole.teacher)
                     }

@@ -4,7 +4,6 @@ struct MeetingRowView: View {
     let meeting: Meeting
     @StateObject private var timer = CountdownTimer()
     
-    // Мәртебе түсі
     var statusColor: Color {
         switch meeting.status {
         case .pending: return .orange
@@ -25,7 +24,6 @@ struct MeetingRowView: View {
                     .font(.caption)
                     .foregroundColor(.gray)
                 
-                // Мәртебесін көрсету
                 Text(meeting.status.rawValue)
                     .font(.caption2).bold()
                     .padding(.horizontal, 6)

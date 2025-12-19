@@ -11,15 +11,27 @@ struct LoginView: View {
     
     var body: some View {
         VStack(spacing: 20) {
+            Spacer()
             
-            Text("MeetingBooker")
-                .font(.largeTitle).bold()
-                .foregroundColor(primaryColor) // Логотиптің түсі
-                .padding(.bottom, 30)
+    
+            VStack(spacing: 10) {
+                Text("MeetingBooker")
+                    .font(.largeTitle).bold()
+                    .foregroundColor(primaryColor)
+                
+                Image("AppLogo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 150, height: 150)
+                    .clipShape(Circle())
+                    .shadow(radius: 5)
+            }
+            .padding(.bottom, 20)
+            
             
             VStack(spacing: 16) {
                 TextField("Электрондық пошта (Email)", text: $email)
-                    .textFieldStyle(.plain) // Дизайнды жақсарту үшін .plain қолданамыз
+                    .textFieldStyle(.plain)
                     .padding()
                     .background(Color.gray.opacity(0.15))
                     .cornerRadius(10)
@@ -33,38 +45,42 @@ struct LoginView: View {
             }
             
             if let e = errorText {
-                Text(e).foregroundColor(.red).font(.footnote).padding(.horizontal)
+                Text(e)
+                    .foregroundColor(.red)
+                    .font(.footnote)
+                    .padding(.horizontal)
             }
             
             // MARK: - Кіру Батырмасы
-            Button("Кіру") {
+            Button(action: {
                 if authVM.login(email: email, password: password) {
-                    // Табысты кіру
+                   
                 } else {
                     errorText = "Қате: Email немесе құпия сөз дұрыс емес"
                 }
+            }) {
+                Text("Кіру")
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(primaryColor)
+                    .foregroundColor(.white)
+                    .font(.headline)
+                    .cornerRadius(10)
             }
-            .frame(maxWidth: .infinity)
-            .padding()
-            .background(primaryColor) // Ашық көк фон
-            .foregroundColor(.white)
-            .font(.headline)
-            .cornerRadius(10)
             .padding(.top, 10)
             
             // MARK: - Тіркелу Батырмасы
             Button("Тіркелу") {
                 showRegister = true
             }
-            .foregroundColor(primaryColor) // Ашық көк мәтін
-            
-            .sheet(isPresented: $showRegister) {
-                RegisterView()
-                    .environmentObject(authVM)
-            }
+            .foregroundColor(primaryColor)
             
             Spacer()
         }
         .padding(25)
+        .sheet(isPresented: $showRegister) {
+            RegisterView()
+                .environmentObject(authVM)
+        }
     }
 }

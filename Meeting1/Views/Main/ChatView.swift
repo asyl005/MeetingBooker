@@ -72,7 +72,7 @@ struct ChatView: View {
     }
 }
 
-// Бір хабарламаны көрсететін View
+//хабарламаны көрсету
 struct MessageRow: View {
     let message: Message
     let isCurrentUser: Bool
@@ -101,7 +101,7 @@ struct MessageRow: View {
         }
     }
 }
-// Rounded Corners хелпері
+
 extension View {
     func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
         clipShape(RoundedCorner(radius: radius, corners: corners))
